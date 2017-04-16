@@ -1,17 +1,20 @@
 %% Initialization
 clear ; close all; clc
-
-global Test
+ 
 global trainSet 
 global testSet
+global train_lable
+global test_lable
 
-Test = true;
 config = config();
 
 %% process row data
 loadData(config); 
 
+disp(sprintf('[@]Show eigenface...\n'))
 for pid = 1 : config.maxpid
     displayEigenface(pid);
 end
 
+
+recog_pca(3);

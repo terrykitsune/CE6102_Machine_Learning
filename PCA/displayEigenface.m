@@ -1,9 +1,15 @@
 function displayEigenface(pid)
 %% Do the PCA to show the eigenface of a person(pid)
 
-global trainSet
+load_dir = dir(sprintf('face/%d/*.bmp', pid));
 
-[V, m, D] = PCA(trainSet(:, :, pid));
+for pid = 1 : length(load_dir)
+    pathname = strcat(load_dir(1).folder, '/', load_dir(pid).name);
+    im_read = imread(pathname);
+    im_data(:, pid) = im2double(im_read(:));
+end
+
+[V, m, D] = PCA(im_data);
 
 figure
 subplot(4, 7, 1);
