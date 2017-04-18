@@ -6,7 +6,7 @@ load_dir = dir(sprintf('face/%d/*.bmp', pid));
 for pid = 1 : length(load_dir)
     pathname = strcat(load_dir(1).folder, '/', load_dir(pid).name);
     im_read = imread(pathname);
-    im_data(:, pid) = im2double(im_read(:));
+    im_data(:, pid) = double(im_read(:));
 end
 
 [V, m, D] = PCA(im_data);

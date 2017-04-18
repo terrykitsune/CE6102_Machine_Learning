@@ -1,6 +1,6 @@
 function X = prepareCellData()
 
-global trainSet;
+global trainSet
  
 class_num = 65;
 

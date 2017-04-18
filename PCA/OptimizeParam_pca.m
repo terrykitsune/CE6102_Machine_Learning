@@ -4,7 +4,7 @@ loadData(config());
 
 global trainSet;
 
-[V] = PCA(trainSet);
+[V, ~, ~] = PCA(trainSet);
 evNum = size(V, 2);
 
 precision = zeros(evNum, 1);

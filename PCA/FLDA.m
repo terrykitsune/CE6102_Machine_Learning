@@ -21,4 +21,4 @@ end
 
 [W, ~] = eig(S_W \ S_B);
 W = W(:, 1:class_num-1);
-M = m
+M = m;

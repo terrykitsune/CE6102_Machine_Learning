@@ -22,7 +22,7 @@ disp('[@]Loading Data');
 for pid = 1 : config.maxpid
     for pic_id = 1 : config.maxpic_id
         pathname    = sprintf('face/%d/%d.bmp', pid, pic_id);
-        imdata(:,:,pic_id,pid)      = im2double(imread(pathname));
+        imdata(:,:,pic_id,pid)      = double(imread(pathname));
     end
     fprintf('%d ', pid);
 end
